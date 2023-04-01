@@ -7,13 +7,14 @@ function App() {
   const [isClickedWrong, setIsClickedWrong] = useState(false);
   const [score, setScore] = useState(0);
 
+  /*
   const handleClick = () => {
     setIsClickedWrong(true);
   };
 
   const buttonColor = {
     backgroundColor: isClickedWrong ? 'red' : 'white'
-  }
+  } */
   useEffect(() => {
     async function fetchData() {
       const response = await fetch('https://opentdb.com/api.php?amount=10&category=23&difficulty=medium&type=multiple');
@@ -56,26 +57,5 @@ Possible other button changing colors: <button style={buttonColor} onClick={hand
     </ul>
   );
 }
-/*
-function App() {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch('https://opentdb.com/api.php?amount=10&category=23&difficulty=medium&type=multiple');
-      const json = await response.json();
-      setData(json);
-    };
-
-    fetchData();
-  }, []);
-
-  return (
-    <div className="App">
-      {data}
-    </div>
-  );
-}
-*/
 
 export default App;
